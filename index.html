@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/main.css">
+	<title>前端开发--谢升</title>
+</head>
+<body style="height: 100%">
+	<div id="my_info">
+	    <h1>个人信息</h1>
+		<div class="info-wrap">
+		   <div class="control-info">
+		       <div class="control-info-i">
+		       	   <span>个人简介</span>
+		       	   <i class="personer"></i>
+		       </div>
+		       <div class="control-info-i">
+		       	   <span>主修课程</span>
+		       	   <i class="kecheng"></i>
+		       </div>
+		       <div class="control-info-i">
+		       	   <span>专业技能</span>
+		       	   <i class="zhuangye"></i>
+		       </div>
+		       <div class="control-info-i">
+		       	   <span>工作经验</span>
+		       	   <i class="gongzuo"></i>
+		       </div>
+		       <div class="control-info-i">
+		       	   <span>个人评价</span>
+		       	   <i class="gerenpj"></i>
+		       </div>	
+           </div>
+           <div class="info-detail clearfix">
+           	
+           </div>
+		</div>
+		<div class="side-info">
+			<img src="images/jpg.jpg" alt="">
+			<div>
+				<p>人生也许是需要一点运气，但机会总是留给有准备的人。
+				</p>
+				<p>
+					无论在黑暗中如何挣扎，最后都只能靠自己一步一步走出来。
+				</p>
+				<p>
+					选择前端也许一开始只是为了生计，但不管怎样讲，现在对它的喜欢在慢慢增加。
+				</p>
+				<p>
+					我会在这条路上一直走下去，即使现在依然困难重重。
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="artical_wrap" id="artical">
+		<div class="artical artical-front" id="artical_{{index}}">
+			<div class="artical-wrap">
+				<div class="artical-side artical-side-front">
+					<h3>{{h3}}</h3>
+					<div class="p-content">
+					    <h4>{{fh4}}</h4>
+					    <p>{{fp}}</p>
+					    <p>...</p>
+					</div>
+				</div>
+				<div class="artical-side artical-side-back">
+					<h3>{{h3}}</h3>
+					{{contents}}
+					<div class="zhedie"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="trainSearch">
+		<div id="search">
+			<h2>列车时刻表查询</h2>
+			<div class="search-info">
+				<div>
+					<label for="">出发站：</label>
+					<input type="text" id="start_station">
+				</div>
+				<div>
+					<label for="">终点站：</label>
+					<input type="text" id="arrive_station">
+				</div>
+				<div>
+					<label for="">车次：</label>
+					<input type="text" id="train_code">
+				</div>
+				<div>
+					<button id="search_bt">搜索</button>
+				</div>
+			</div>
+			<div class="search-result">
+        <div class="jiazai"></div>
+				<ul id="search_result">
+					<li>
+						<h3>{{trainCode}}</h3>
+						<p>{{stratStation}}--{{arriveStation}}</p>
+						<p>历时：{{useTime}}</p>
+						<p class="side">
+							出发时间：{{startTime}}
+						</p>
+            <i></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="search_detail">
+			<h2>列车时刻表查询</h2>
+      <div id="search_detail_result">
+      </div>
+			<a href="#search">返回</a>
+		</div>
+	  </div>
+	<!-- div# -->
+	<div id="visitor_comments">
+	  <div id="comment_front">
+	  	<div class="comment-front" id="comm_front_{{index}}">
+		    <div class="left"></div>
+		    <div class="right"></div>
+		  	<h3>{{user}}</h3>
+		  	<p>{{shortContent}}</p>
+		  	<span>{{date}}</span>
+	    </div>
+	  </div>
+	  <div class="comment-center" id="comment_center">
+	  	<div class="comment-back" id="comm_back_{{index}}">
+	  		<p>{{Content}}</p>
+	  		<h3>{{user}}</h3>
+	  		<span>{{date}}</span>
+	  	</div>
+	  	<div class="close"></div>
+	  </div>
+	  <div class="comment-side">
+	     <p>亲，有什么想说的，请在这里留下脚印：</p>
+	  	 <textarea rows="5" cols="50" id="text_input" maxlength="150" onkeydown="leftNum()"></textarea>
+	  	 <span>还可以输入<span id="left_num">150</span>/150个字</span>
+	     <button id="comment_bt" value="submit">提交</button>
+	  </div>	
+	</div>
+	<div class="other-show clearfix">
+		<div class="web-reader">
+			<div class="img-wrap">
+				<a href="webapp/index.html">
+					<img src="images/web.jpg" alt="">
+				</a>
+			</div>
+			<div class="info">
+				针对移动端的web阅读器。<br>
+				应用基本的结构，样式和行为，实现了页面的展示和交互。<br>
+				应用了css3的一些属性，如透明度和圆角。<br>
+				应用了HTML5的本地存储，保存用户的一些偏好设置。<br>
+				应用jsonp实现了跨域的ajax请求，并将处理过的数据写入页面。<br>
+			</div>
+		</div>
+		<div class="jd-detail">
+			<div class="img-wrap">
+				<a href="">
+					<img src="images/jd.jpg" alt="">
+				</a>
+			</div>
+			<div class="info">
+				京东产品详细页的静态页面。<br>
+				通过对真正页面的截图的效果和尺寸来进行整体的结构和样式布局。<br>
+				根据各部分的细节和功能，来完成局部的展示和和交互功能。<br>
+			</div>
+		</div>
+		<div class="side">
+			<span>作品展示</span>
+		</div>
+	</div>
+	<script src="js/move.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	    ctrlInfo();
+
+        var articalTop = document.getElementById("artical").offsetTop;
+        var searchTop = document.getElementById("trainSearch").offsetTop;
+        var commentTop = document.getElementById("visitor_comments").offsetTop;
+
+        var articalShow = true;
+        var searchShow = true;
+        var commentShow = true;
+
+        // ctrlArtical();
+        TrainSearch();
+        // ctrlArtical();
+        var leftNum = null;
+        window.onscroll = function(){
+        	var scrollH = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        	if(scrollH > (articalTop-200)){
+        		if(articalShow){
+        			ctrlArtical();
+        			articalShow = false;
+        		}
+        	}
+        	if(scrollH > (commentTop-200)){
+        		if(commentShow){
+        			leftNum = ctrlComment();
+        			commentShow = false;
+        		}
+        	}
+        }
+
+	</script>
+</body>
+</html>
