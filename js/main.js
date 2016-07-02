@@ -138,7 +138,7 @@ function ctrlArtical(){
 	         }
 	         _navs[s].onmouseout = function(){
 	         	var _span = this.parentNode.getElementsByTagName("span")[0];
-	         	startMove(_span,{"bottom":0,"opacity":0});
+	         	startMove(_span,{"top":0,"opacity":0});
 	         }
 	         _navs[s].onclick = function(){
 	         	rSort(this.index);
