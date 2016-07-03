@@ -225,7 +225,7 @@ function TrainSearch(){
 	           // Result = Result.replace(/\s*\s*/,"");
 	           Result = Result.replace(/(^\s*)|(\s*$)/g, "");
 	           var timeTable = xml.getElementsByTagName("TimeTable");
-	           if(timeTable[0].getElementsByTagName("KM")[0].innerHTML == "0"){
+	           if(getText(timeTable[0].getElementsByTagName("KM")[0])){
 	             searchResult.innerHTML = "没有搜索到符合要求的结果";
 	             searchResult.style.display = "block";
 	             loading.style.display = "none";
@@ -235,11 +235,11 @@ function TrainSearch(){
 	             var lis = [];
 	             for(var i = 0;i<len;i++){
 	               var tr = timeTable[i];
-	               var _html = Result.replace(/{{trainCode}}/,tr.getElementsByTagName("TrainCode")[0].innerHTML);
-	               _html = _html.replace(/{{stratStation}}/,tr.getElementsByTagName("StartStation")[0].innerHTML);
-	               _html = _html.replace(/{{arriveStation}}/,tr.getElementsByTagName("ArriveStation")[0].innerHTML);
-	               _html = _html.replace(/{{useTime}}/,tr.getElementsByTagName("UseDate")[0].innerHTML);
-	               _html = _html.replace(/{{startTime}}/,tr.getElementsByTagName("StartTime")[0].innerHTML);
+	               var _html = Result.replace(/{{trainCode}}/,getText(tr.getElementsByTagName("TrainCode")[0]));
+	               _html = _html.replace(/{{stratStation}}/,getText(tr.getElementsByTagName("StartStation")[0]));
+	               _html = _html.replace(/{{arriveStation}}/,getText(tr.getElementsByTagName("ArriveStation")[0]));
+	               _html = _html.replace(/{{useTime}}/,getText("tr.getElementsByTagName("UseDate")[0]"));
+	               _html = _html.replace(/{{startTime}}/,getText(tr.getElementsByTagName("StartTime")[0]));
 	               lis.push(_html);
 	             }
 	             var liss = lis.join("");
@@ -279,7 +279,7 @@ function TrainSearch(){
 	   }
 	}
 
-
+        
 	function getTrainDetail(obj,h3,url){
 	 // alert(obj.dBind);
 	   request.open("GET",url);
@@ -294,7 +294,7 @@ function TrainSearch(){
 	        var detailHtml = "<div id='search_detail_result'><h3>"+ h3 +"次</h3><table><tr><th class='first'>站名</th><th>到达时间</th><th>出发时间</th></tr>";
 	        var trs = [];
 	        for(var i = 0;i<detailInfo.length;i++){
-	         var _html = "<tr><td>" + detailInfo[i].getElementsByTagName("TrainStation")[0].innerHTML + "</td><td>" + detailInfo[i].getElementsByTagName("ArriveTime")[0].innerHTML + "</td><td>" +  detailInfo[i].getElementsByTagName("StartTime")[0].innerHTML + "</td></tr>";
+	         var _html = "<tr><td>" + getText(detailInfo[i].getElementsByTagName("TrainStation")[0]) + "</td><td>" + getText(detailInfo[i].getElementsByTagName("ArriveTime")[0]) + "</td><td>" +  getText(detailInfo[i].getElementsByTagName("StartTime")[0]) + "</td></tr>";
 	         trs.push(_html);
 	        }
 	        var trss = trs.join("");
@@ -312,6 +312,9 @@ function TrainSearch(){
 	       }
 	     }
 	   }
+	}
+	function getText(obj){
+		return obj.innerHTML || obj.text;
 	}
 }
 
