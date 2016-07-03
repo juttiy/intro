@@ -1,0 +1,2 @@
+解决在IE下，Array.splice，不传第二个参数的情况下，Array不会发生变化的问题，http://stackoverflow.com/questions/8332969/ie-8-splice-not-working
+就是根据要删除的个数把第二个参数补上
