@@ -2,3 +2,5 @@
 就是根据要删除的个数把第二个参数补上
 
 2，ie8 ajax拒绝访问的解决办法  http://blog.csdn.net/wangmx123/article/details/9090485
+
+3,实现overflow-x:hidden的效果，最好之前加一句overflow:auto，以免在IE下失效
