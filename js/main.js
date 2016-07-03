@@ -238,7 +238,7 @@ function TrainSearch(){
 	               var _html = Result.replace(/{{trainCode}}/,getText(tr.getElementsByTagName("TrainCode")[0]));
 	               _html = _html.replace(/{{stratStation}}/,getText(tr.getElementsByTagName("StartStation")[0]));
 	               _html = _html.replace(/{{arriveStation}}/,getText(tr.getElementsByTagName("ArriveStation")[0]));
-	               _html = _html.replace(/{{useTime}}/,getText("tr.getElementsByTagName("UseDate")[0]"));
+	               _html = _html.replace(/{{useTime}}/,getText(tr.getElementsByTagName("UseDate")[0]));
 	               _html = _html.replace(/{{startTime}}/,getText(tr.getElementsByTagName("StartTime")[0]));
 	               lis.push(_html);
 	             }
