@@ -145,7 +145,7 @@ function ctrlArtical(){
 	         }
 		}
 		articals.splice(n,1);
-		var artical_left = articals.splice(parseInt(articals.length/2));
+		var artical_left = articals.splice(parseInt(articals.length/2),articals.length-parseInt(articals.length/2));
 		var artical_right = articals;
 	     var ranges = range();
 	     for(var i = 0 ;i<artical_left.length;i++){
